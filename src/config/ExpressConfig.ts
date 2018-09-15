@@ -18,11 +18,11 @@ export class ExpressConfig {
   }
 
   setupControllersV1() {
-    const controllersPath = path.resolve('dist', 'controllers');
+    const controllersPath = path.resolve('dist');
 
     useExpressServer(this.app, {
       routePrefix: "/api/v1",
-      controllers: [ controllersPath ]
+      controllers: [ `${controllersPath}/controllers/*.js` ]
     });
   }
 }
