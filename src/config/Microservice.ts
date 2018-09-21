@@ -8,11 +8,10 @@ export class Microservice {
   constructor() {
     this.express = new ExpressConfig();
 
-    const host: string = config.get('express.host');
     const port: number = config.get('express.port');
 
     // Start Webserver
-    this.server = this.express.app.listen(port, host, () => {
+    this.server = this.express.app.listen(port, () => {
       console.info(`Microservice listen at: http://localhost:${port}`);
     });
   }
