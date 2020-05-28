@@ -1,7 +1,6 @@
 import * as express from 'express';
 import * as path from 'path';
 import * as bodyParser from 'body-parser';
-import * as health from 'express-ping';
 import * as config from 'config';
 
 import { useExpressServer } from 'routing-controllers';
@@ -13,7 +12,6 @@ export class ExpressConfig {
     this.app = express();
 
     this.app.use(bodyParser.json());
-    this.app.use(health.ping());
 
     this.setupControllersV1();
   }
